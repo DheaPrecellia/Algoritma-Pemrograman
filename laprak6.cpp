@@ -31,40 +31,45 @@ istream& operator>>(istream& in, Vektor& A) {
 	for (int i=0; i<A.banyak; i++) {
   	cout << "Data [" << i+1 << "] : ";
   	in >> A.elemen[i];
-	  }
-return in;
+	}
+	return in;
 }
-ostream& operator<<(ostream& out, Vektor& A) {
-   cout << endl;
-   for (int i=0; i<A.banyak; i++)
 
-cout << "s[" << i+1 << "] = " << setw(5) << A.elemen[i] << "\n";
+ostream& operator<<(ostream& out, Vektor& A) {
+   out << endl;
+   for (int i=0; i<A.banyak; i++)
+		out << "s[" << i+1 << "] = " << setw(5) << A.elemen[i] << "\n";
 return out;
 }
+
 void Vektor::penjumlahan_vektor(const Vektor& A, const Vektor& B) {
-   if (A.banyak > B.banyak) banyak = A.banyak;
-     else banyak = B.banyak;
+   if (A.banyak > B.banyak) 
+   	banyak = A.banyak;
+     else 
+	 banyak = B.banyak;
+	 
    for (int i=0; i<banyak; i++)
      elemen[i] = A.elemen[i] + B.elemen[i];
 }
+
 void Vektor::perkalian_vektor(float k, const Vektor& A) {
   banyak = A.banyak;
   for (int i=0; i<banyak; i++)
   elemen[i] = k*A.elemen[i];
-
-
 }
-#include <iostream>
-#include <iomanip>
+
 int main() {
-Vektor X, Y, Z;
-  cin >> X;
-  cout << X;
-  cin >> Y;
-  cout << Y;
-  Z.penjumlahan_vektor(X,Y);
-  cout << "\nHasil penjumlahan 2 vektor\n" << Z;
-  Z.perkalian_vektor(3,X);
-  cout << "\nHasil perkalian skalar dengan vektor\n" << Z;
-  cout << Z;
+	Vektor X, Y, Z;
+  	cin >> X;
+  	cout << X;
+  	cin >> Y;
+  	cout << Y;
+  	
+  	Z.penjumlahan_vektor(X,Y);
+  	cout << "\nHasil penjumlahan 2 vektor\n" << Z;
+  	
+  	Z.perkalian_vektor(3,X);
+  	cout << "\nHasil perkalian skalar dengan vektor\n" << Z;
+
+	return 0;
 }
