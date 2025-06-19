@@ -20,7 +20,7 @@ private:
 void Matriks::baca_matriks () {    
 	for (int i=0; i<baris; i++) {
 	for (int j=0; j<kolom; j++) {              
-		cout << "Data [" << i+1 << "," << j+1 << "] : :"; 
+		cout << "Data [" << i << "," << j<< "] :"; 
 		cin >> A[i][j]; 
 		}           
 	} 
