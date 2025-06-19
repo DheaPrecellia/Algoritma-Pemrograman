@@ -80,6 +80,10 @@ int main(){
 	cout << "Memasukkan data matriks II\n"; 
 	cin >> matriks2;
 	
+	cout << "\nHasil Penjumlahan : \n"; 
+	hasil.matriks_jumlah(matriks1, matriks2);
+	hasil.cetak_matriks();
+	
 	cout << "\nHasil Perkalian : \n"; 
 	hasil.perkalian_matriks(matriks1, matriks2);
 	hasil.cetak_matriks();
